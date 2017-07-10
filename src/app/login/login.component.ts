@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   message: string;
+  loading = false;
 
   constructor(private authService: AuthService, private router: Router) {
     this.message = '';
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   login(event, username: string, password: string) {
     event.preventDefault();
+     this.loading = true;
     this.message = '';
     this.authService.obtainAccessToken(username, password, (data) => {
       if (data) {
@@ -22,6 +24,7 @@ export class LoginComponent implements OnInit {
       }
     },
       (errData) => {
+        this.loading = false;
         this.message = 'Invaild credentials';
         setTimeout(function() {
           this.message = '';
