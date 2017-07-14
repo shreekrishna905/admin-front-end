@@ -8,7 +8,6 @@
     <div class="alert alert-danger" role="alert" *ngIf="message">
 		{{ message }}
 		</div>
-
     <form action="#">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="User Name" #username>
@@ -22,7 +21,7 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
+              <input appIcheck type="checkbox"> Remember Me
             </label>
           </div>
         </div>
@@ -45,3 +44,4 @@
 </div>
 <!-- Show Loading -->
 <div *ngIf="loading" class="modal"></div>
+

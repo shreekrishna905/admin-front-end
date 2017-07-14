@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { IcheckDirective } from './directive/icheckdirective';
 import { HomeComponent } from './home/home.component';
 import { AUTH_PROVIDERS } from './login/auth.service';
 import { LoggedInGuardService } from './login/logged-in-guard.service';
@@ -13,12 +14,13 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent},
    { path: 'home', component: HomeComponent, canActivate: [LoggedInGuardService] }
 ];
 
 @NgModule({
   declarations: [
+    IcheckDirective,
     AppComponent,
     HomeComponent,
     LoginComponent,
