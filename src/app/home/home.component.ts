@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
@@ -7,8 +8,12 @@ import {Router} from '@angular/router';
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private router: Router) {}
+  searchForm: FormGroup;
+  constructor(private router: Router, fb: FormBuilder) {
+    this.searchForm = fb.group({
+      'keyword': ['']
+    });
+  }
   ngOnInit() {
   }
 

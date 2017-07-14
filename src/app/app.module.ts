@@ -11,6 +11,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -28,6 +29,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+   ReactiveFormsModule,
     RouterModule.forRoot(routes),
     HttpModule
   ],
