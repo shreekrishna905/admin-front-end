@@ -100,6 +100,9 @@ body {
   z-index: 800;
 }
 .main-footer {
+	position:fixed !important;
+	width:100% !important;
+	bottom:0px !important;
   background: #fff;
   padding: 15px;
   color: #444;
@@ -142,6 +145,12 @@ body.hold-transition .main-header .logo {
   transition: none;
 }
 /* Content */
+
+.side-content {
+	position: fixed !important;
+  width: 23% !important;
+}
+
 .content {
   min-height: 250px;
   padding: 15px;
@@ -149,6 +158,7 @@ body.hold-transition .main-header .logo {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 50px;
 }
 /* H1 - H6 font */
 h1,
@@ -203,6 +213,9 @@ a:focus {
   margin-left: 230px;
   border: none;
   min-height: 50px;
+    position: fixed;
+  	width:100%;
+  	margin-left: 0;
   border-radius: 0;
 }
 .layout-top-nav .main-header .navbar {
@@ -4899,6 +4912,9 @@ table.text-center th {
   .main-footer {
     margin-left: 0 !important;
     min-height: 0 !important;
+    position:fixed !important;
+    width:100% !important;
+    bottom:0px;
     -webkit-transform: translate(0, 0) !important;
     -ms-transform: translate(0, 0) !important;
     -o-transform: translate(0, 0) !important;

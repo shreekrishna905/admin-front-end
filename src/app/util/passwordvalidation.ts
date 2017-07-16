@@ -7,9 +7,11 @@ export class PasswordValidation {
     } => {
       const password = group.controls[passwordKey];
       const confirmPassword = group.controls[confirmPasswordKey];
-      if (password.value !== confirmPassword.value) {
+      console.log('Password ' + password.value + ' confirm Password = ' + confirmPassword.value)
+
+      if ( password.value !== confirmPassword.value) {
         return {
-          mismatchPassword: true
+          mismatch: true
         };
       }
     }

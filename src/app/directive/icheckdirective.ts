@@ -1,5 +1,6 @@
 
-import {Directive, ElementRef} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, OnInit, Output} from '@angular/core';
+import {Observable} from 'rxjs';
 declare var $: any;
 
 @Directive({
@@ -8,7 +9,7 @@ declare var $: any;
 export class IcheckDirective {
 
   $: any = $;
-  constructor(el: ElementRef) {
+  constructor(private el: ElementRef) {
     this.$(el.nativeElement).iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',

@@ -23,16 +23,15 @@
       <div class="form-group has-feedback"  [class.has-error]="!registerForm.controls['verifyPassword'].valid && registerForm.controls['verifyPassword'].touched">
         <input type="password" class="form-control" [formControl]="registerForm.controls['verifyPassword']" placeholder="Retype password">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-      <div *ngIf="registerForm.controls['verifyPassword'].hasError('mismatchPassword')"
+      <div *ngIf="registerForm.hasError('mismatch')"
 				class="ui error message">Password mismatch</div>
-      
       </div>
       
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input appIcheck type="checkbox" [formControl]="registerForm.controls['check']"> I agree to the <a href="#">terms</a>
+              <input appIcheck type="checkbox"> I agree to the <a href="#">terms</a>
             </label>
           </div>
         </div>
