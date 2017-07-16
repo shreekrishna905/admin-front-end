@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  templateUrl: './main.component.html'
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  statusForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.statusForm = fb.group({
+      'status': ['']
+    });
+  }
 
   ngOnInit() {
   }

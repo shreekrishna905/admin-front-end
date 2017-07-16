@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProfileComponent} from './home/profile/profile.component';
 import {SearchComponent} from './home/search/search.component';
 import {MainComponent} from './home/main/main.component';
+import { LogoutComponent } from './home/logout/logout.component';
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
     RegisterComponent,
     ProfileComponent,
     SearchComponent,
-    MainComponent
+    MainComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

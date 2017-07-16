@@ -1,3 +1,4 @@
+import { LogoutComponent } from './logout/logout.component';
 import { MainComponent } from './main/main.component';
 import {ProfileComponent} from './profile/profile.component';
 import {SearchComponent} from './search/search.component';
@@ -8,6 +9,7 @@ import {Router, Routes} from '@angular/router';
 export const childRoutes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: 'main', component: MainComponent},
+  { path: 'logout', component: LogoutComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'search', component: SearchComponent}
 ];
