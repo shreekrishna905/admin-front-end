@@ -7,7 +7,7 @@
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm)">
       <div class="form-group has-feedback"  [class.has-error]="!registerForm.controls['fullName'].valid && registerForm.controls['fullName'].touched">
         <input type="text" class="form-control" [formControl]="registerForm.controls['fullName']" placeholder="Full name">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
