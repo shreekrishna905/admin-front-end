@@ -16,6 +16,7 @@ import {ProfileComponent} from './home/profile/profile.component';
 import {SearchComponent} from './home/search/search.component';
 import {MainComponent} from './home/main/main.component';
 import { LogoutComponent } from './home/logout/logout.component';
+import { REGISTER_PROVIDERS } from './register/register.service';
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
   ],
   providers: [
     AUTH_PROVIDERS,
+    REGISTER_PROVIDERS,
     LoggedInGuardService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

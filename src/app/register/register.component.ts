@@ -1,6 +1,7 @@
 import {PasswordValidation} from '../util/passwordvalidation';
+import {RegisterService} from './register.service';
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -12,10 +13,10 @@ export class RegisterComponent implements OnInit {
 
   loading = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private registerService: RegisterService, private fb: FormBuilder) {
     this.registerForm = fb.group({
       'fullName': ['', Validators.required],
-      'email': ['', Validators.compose([Validators.required, Validators.email])],
+      'email': ['', Validators.compose([Validators.required, Validators.email]), this.isEmailUnique.bind(this)],
       'password': ['', Validators.required],
       'verifyPassword': ['', Validators.required]
     },
@@ -31,6 +32,18 @@ export class RegisterComponent implements OnInit {
     const user = this.registerForm.value;
     const json = {'fullName': user.fullName, 'email': user.email, 'password': user.password, 'enabled': true, 'roles': [{'id': 1, 'name': 'ROLE_USER'}]};
     console.log(json);
+  }
+
+  isEmailUnique(control: FormControl) {
+    const q = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this.registerService.isEmailRegistered(control.value).subscribe(() => {
+          resolve(null);
+        }, () => {resolve({'isEmailUnique': true}); });
+      }, 1500);
+    });
+    console.log(q);
+    return q;
   }
 
 }
