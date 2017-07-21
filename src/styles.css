@@ -4955,4 +4955,7 @@ table.text-center th {
                 50% 50% 
                 no-repeat;
 }
+.error{
+	color: #ff3300;
+}
 

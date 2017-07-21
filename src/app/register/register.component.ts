@@ -37,13 +37,18 @@ export class RegisterComponent implements OnInit {
   isEmailUnique(control: FormControl) {
     const q = new Promise((resolve, reject) => {
       setTimeout(() => {
-        this.registerService.isEmailRegistered(control.value).subscribe(() => {
-          resolve(null);
-        }, () => {resolve({'isEmailUnique': true}); });
-      }, 1500);
+        this.registerService.isEmailRegistered(control.value)
+          .subscribe((data) => {
+            if (data.status === true) {
+              resolve({'isEmailUnique': true});
+            } else {
+              resolve(null);
+            }
+          });
+      }, 1000);
     });
-    console.log(q);
     return q;
   }
+
 
 }
